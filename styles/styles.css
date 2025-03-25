@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;          
+    height: auto;        
+    max-width: 450px;     
+    display: block;
+    padding: 5px;
+    margin: 5px auto;
+    object-fit: cover; 
+    border-radius: 40px;
+    box-shadow: 10px 5px 5px rgb(135, 206, 235);
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+
+body {
+    font-family: 'Playfair Display', sans-serif;
+    background-color: rgb(135, 206, 235);
+    color: rgb(11, 6, 61);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "encabezado"
+    "nav"
+    "principal"
+    "piepagina";
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+}
+
+header {
+    background: linear-gradient(90deg, rgba(0,0,255,0.7), rgba(0,128,0,0.7));
+    text-align: center;
+    padding: 30px 0;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    letter-spacing: 2px;
+}
+
+nav {
+    grid-area: nav;
+    background: rgb(51, 51, 51);
+    text-align: center;
+    padding: 20px 0;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    background: rgb(51, 51, 51);
+}
+
+nav ul li {
+    display: inline;
+    margin: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 20px 15px;
+    transition: 0.3s;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    background: none;
+}
+
+main{
+    grid-area: principal;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 25px;
+    gap: 25px;
+    max-width: 2500px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.seccion-historia, .seccion-videojuego{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: auto;
+    gap: 50px;
+    grid-template-areas: 
+        "area1 area2";
+}
+
+.contenido-principal-seccion{
+    grid-area: area1;
+
+    
+}
+
+.contenido-principal-seccion-inverso{
+    grid-area: area2;
+}
+
+.contenido-secundario-seccion{
+    grid-area: area2;
+}
+
+.contenido-secundario-seccion-inverso{
+    grid-area: area1;
+}
+
+
+aside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: grid;
+    gap: 20px;
+    text-shadow: rgba(255, 0, 0, 0.7) 1px 0 10px;
+}
+
+h2 {
+    font-family: 'Boldonse', sans-serif;
+    color: rgb(0, 162, 255);
+    text-shadow: rgb(135, 206, 235) 1px 0 10px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    
+}
+
+footer {
+    grid-area: piepagina;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    background-color: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    height: 150px; 
+}
+
+footer a {
+    color: rgb(0, 170, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
